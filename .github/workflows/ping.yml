@@ -12,6 +12,7 @@ jobs:
         with:
           repository: jdblischak/pong
           ref: main
+          path: pong
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Working dir
         run: |
