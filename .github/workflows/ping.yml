@@ -13,6 +13,10 @@ jobs:
           repository: jdblischak/pong
           ref: main
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Working dir
+        run: |
+          echo `pwd`
+          ls -lR ..
       - name: ping!
         run: |
           echo "date: $(date)" > ping.txt        
