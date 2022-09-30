@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: "jdblischak/pong"
+          repository: jdblischak/pong
+          ref: main
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: ping!
         run: |
