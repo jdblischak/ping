@@ -1,0 +1,22 @@
+name: ping
+on:
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    name: ping
+    env:
+      TZ: "America/New_York"
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: "jdblischak/pong"
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: ping!
+        run: |
+          echo "date: $(date)" > ping.txt        
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "runneradmin@github.com"
+          git add ping.txt
+          git commit -m "Ping!"
+          git push origin main
