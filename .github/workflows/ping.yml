@@ -26,3 +26,4 @@ jobs:
           git add ping.txt
           git commit -m "Ping!"
           git push origin main
+        working-directory: pong
